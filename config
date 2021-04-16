@@ -1,1 +1,20 @@
 
+server:
+  port: 8888
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+         uri: https://gitlab.com/chenxinghao1994/com-wtr
+         username: chenxinghao1994
+         password: cxh19941105..
+         search-paths: config
