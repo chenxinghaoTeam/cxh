@@ -3,14 +3,8 @@ server:
 spring:
   application:
     name: testBusiness
-  cloud:
-    config:
-      name: database
-      uri: http://config-service:8888
-      label: master
-      profile: dev
-#  datasource:
-#    driver-class-name: oracle.jdbc.driver.OracleDriver
-#    url: jdbc:oracle:thin:@localhost:1521/orcl
-#    username: cxh
-#    password: 123
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521/orcl
+    username: cxh
+    password: 123
