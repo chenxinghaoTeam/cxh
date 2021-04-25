@@ -7,7 +7,7 @@ require.config({
 	　　　　}
 	});
 
-require(['testView','jquery','echarts','common'],function(my){
+require(['testView'],function(my){
 	my.render();
 });
 

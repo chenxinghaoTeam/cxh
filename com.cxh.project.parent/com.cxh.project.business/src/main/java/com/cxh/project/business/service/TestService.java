@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,17 +14,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cxh.project.entity.Persons;
 
 @RestController
 @RequestMapping("/testClient")
 public class TestService {
 	public static final Logger log = LogManager.getLogger(TestService.class);
-	
+
 	@Autowired
 	NamedParameterJdbcTemplate jdbcTemplate;
-	
+
 	@RequestMapping("/getResult")
-	public List<Map<String, Object>> getResult(@RequestBody Map<String, Object> params){
+	public List<Map<String, Object>> getResult(@RequestBody Map<String, Object> params) {
 		List<Map<String, Object>> result = new ArrayList<>();
 		Map<String, Object> param = new HashMap<>();
 		StringBuffer sql = new StringBuffer();
@@ -37,4 +39,3 @@ public class TestService {
 		return result;
 	}
 }
- 
