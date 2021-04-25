@@ -1,4 +1,4 @@
-package org.com.cxh.eureka.web;
+package com.cxh.eureka.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
