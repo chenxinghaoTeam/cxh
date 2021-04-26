@@ -1,6 +1,11 @@
 server:
   port: 8081
 spring:
+  mail:
+    default-encoding: UTF-8
+    host: smtp.qq.com
+    username: 542013089@qq.com
+    password: cjrqnbhafhzubbga #不是qq密码 smtp码
   application:
     name: testWeb
   cloud:
