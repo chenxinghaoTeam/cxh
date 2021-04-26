@@ -6,6 +6,11 @@ define([ 'jquery', 'echarts', 'common' ], function($, echarts, common) {
 		initPage();
 	}
 
+	$("#word").click(function(){
+		window.location.href = "/ExportWord/exportMillCerttificateWord"
+	})
+	
+	
 	// 列表数据
 	function initPage() {
 		param = {
