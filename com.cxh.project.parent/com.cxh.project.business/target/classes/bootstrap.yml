@@ -1,10 +1,18 @@
-server:
-  port: 8082
 spring:
   application:
-    name: testBusiness
-  datasource:
-    driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@localhost:1521/orcl
-    username: cxh
-    password: 123
+    name: nacos-business
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+      # 配置文件的环境
+        group: ${spring.profiles.active}
+      # 配置文件的格式
+        file-extension: yaml
+      # 配置中心的地址
+        server-addr: 127.0.0.1:8848
+      # 配置文件prefix
+        prefix: ${spring.application.name}
+      #命名空间
+        namespace: 4e8ce42d-c35b-4bff-853d-e92a105cc5b9
