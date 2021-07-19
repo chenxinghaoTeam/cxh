@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableFeignClients({"com.cxh"})
-@ComponentScan({"com.cxh"})
+@ComponentScan({ "com.cxh" })
 @EnableDiscoveryClient
 public class WebApplication {
 	public static void main(String[] args) {

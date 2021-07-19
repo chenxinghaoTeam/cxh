@@ -26,6 +26,31 @@ define(['jquery','echarts'],function($,echarts) {
 		return dateValue;
 	}
 	
+	
+	/**
+	 * 文件上传ajax请求
+	 * id为form表单id
+	 */
+	me.uploadAjax = function(pathUrl, id) {
+		var dateValue = null;
+		var form = new FormData(document.getElementById(id));
+		$.ajax({
+			type : "POST",
+			url : pathUrl,
+			async : false,
+			data : form,
+			dataType : "json",//返回的格式必须和controller返回的一致
+			processData : false,
+			contentType : false,
+			success : function(data) {
+				dateValue = data;
+			},
+            error:function(e){
+                alert("错误！！");
+            }
+		});
+		return dateValue;
+	}
 
 	/**
 	 * 解析url传入的参数
@@ -41,6 +66,25 @@ define(['jquery','echarts'],function($,echarts) {
 		}
 		return paras;
 	}
+	
+	// 提示框
+	me.showMessage = function(message, type, time) {
+		let str = ''
+		switch (type) {
+		case 'success':
+			str = '<div class="success-message" style="width: 300px;height: 40px;text-align: center;background-color:#daf5eb;;color: rgba(59,128,58,0.7);position: fixed;left: 43%;top: 35%;line-height: 40px;border-radius: 5px;z-index: 9999">\n'
+					+ '    <span class="mes-text">' + message + '</span></div>'
+			break;
+		case 'error':
+			str = '<div class="error-message" style="width: 300px;height: 40px;text-align: center;background-color: #f5f0e5;color: rgba(238,99,99,0.8);position: fixed;left: 43%;top: 35%;line-height: 40px;border-radius: 5px;;z-index: 9999">\n'
+					+ '    <span class="mes-text">' + message + '</span></div>'
+		}
+		$('body').append(str)
+		setTimeout(function() {
+			$('.' + type + '-message').remove()
+		}, time)
+	}
+	
 	
 	me.getRing = function (chartsId) {
 		// 基于准备好的dom，初始化echarts实例

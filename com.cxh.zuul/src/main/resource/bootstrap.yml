@@ -10,7 +10,15 @@ spring:
     gateway:
       routes:
         - id: getcxh
+        #路由目标的服务名(lb代表从注册中心(nacos)获取服务)
           uri: lb://testWeb
+          #转发路径
           predicates:
             - Method=GET,POST
             - Path=/controller/**
+            #当请求带/controller则访问localhost:8888/testWeb/controller
+        - id: getcxh1
+          uri: lb://testWeb
+          #转发路径
+          predicates:
+            - Path=/testView/index.html
