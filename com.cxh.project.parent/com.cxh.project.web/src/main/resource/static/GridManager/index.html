@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GridManager</title>
+<script type="text/javascript"
+	src="../common/scripts/lib/require/require.js"></script>
+<script type="text/javascript" src="res/js/config.js"></script>
+<!-- 样式 -->
+<link href="./res/css/page.css" rel="stylesheet" type="text/css" />
+<link href="./res/css/common.css" rel="stylesheet" type="text/css" />
+<link href="./res/css/gm.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<section class="search-area">
+		<div class="sa-ele">
+			<label class="se-title">标题:</label> <input class="se-con"
+				name="title" />
+		</div>
+		<div class="sa-ele">
+			<label class="se-title">博文分类:</label> <select class="se-con"
+				name="type">
+				<option value="-1">请选择</option>
+				<!--通过js增加-->
+			</select>
+		</div>
+		<div class="sa-ele">
+			<label class="se-title">内容:</label> <input class="se-con"
+				name="content" />
+		</div>
+		<div class="sa-ele">
+			<button class="search-action">搜索</button>
+			<button class="reset-action">重置</button>
+		</div>
+	</section>
+
+	<section class="grid-main">
+		<table></table>
+	</section>
+
+
+</body>
+</html>
