@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta name='viweport' content="width=device-width,initial-scale=1.0">
+<title>换流总览</title>
+<script>
+	$AK_DEBUGMODE = true;
+	$AK_LOCALE = "zh_CN";
+	__appRoot = "";
+	__akPath = __appRoot + "ak/scripts/";
+	__akThemePath = __appRoot + "ak/res/themes/";
+	tokenArrays = [];//本地放开，提交注释
+</script>
+<link rel='stylesheet' href="/ak/res/css/zero.css" />
+<link rel='stylesheet' href='/ak/res/themes/default/akui.min.css' />
+<link rel='stylesheet' href='/ak/res/themes/icons.min.css' />
+<link rel='stylesheet' href='/ak/res/themes/live/skin.min.css' />
+<script type="text/javascript" src="../common/scripts/lib/require/require.js"></script>
+<script type="text/javascript" src="res/js/config.js"></script>
+
+<link href="res/css/page.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="background-color: #323A6E;">
+	<div class="ak-fit bgcolor" style="overflow: hidden;">
+		<div class="ak-splitter" vertical="true" allowResize="false"
+			handlerSize="10" style="width: 100%; height: 100%;">
+			<!-- 电压等级 年份按钮 -->
+			<div size="10%" showCollapseButton="false">
+				<div class="ak-splitter" vertical="true" allowResize="false"
+					handlerSize="5">
+					<div size="70%" showCollapseButton="false">
+						<div class="F-box F-box-hoveroff F-boxoverflow ct-top-title-bg">
+							<div class="F-mcsas-title ct-top-title"
+								style="position: absolute; top: 8%;">
+								<span class="titlespan"
+									style="color: #FFFFFF; font-size: 22px; font-weight: normal;">换流
+									- </span> <span class="titlespan" id="ctProvinceName"></span> <span
+									class="titlespan" id="ctTitleTotalName">隐患总计</span> <span
+									class="titlespan" id='ctTitleTotalNum'>0</span> <span
+									class="titlespan" id='ctTitleTotalUnit'>项</span> <span
+									class="titlespan" id='ctTopTitle'></span>
+							</div>
+						</div>
+					</div>
+					<div size="30%" showCollapseButton="false">
+						<div class="F-box F-box-hoveroff F-boxtransparent F-boxoverflow">
+							<div id="hazardBtn"
+								class="ak-radiobuttonlist ak-radiobuttonlistnewstyle"
+								style="right: 0rem; position: absolute;" repeatItems="1"
+								repeatLayout="table" repeatDirection="vertical" textField="text"
+								valueField="id"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- chart图展示 -->
+			<div size="90%" showCollapseButton="false">
+				<div class="ak-splitter" vertical="true" allowResize="false"
+					handlerSize="10" style="width: 100%; height: 100%;">
+					<div size="50%" showCollapseButton="false">
+						<div class="ak-splitter" vertical="false" allowResize="false"
+							handlerSize="10" style="width: 100%; height: 100%;">
+							<div size="35%" showCollapseButton="false">
+								<div class="F-box" id="area">
+									<div class="F-mcsas-title">
+										<span class="titlespan area-title">年度分布</span> <span
+											class="unitspan">单位 : 项</span>
+									</div>
+									<div class="F-box_title F-box_title_maxl">
+										<p class="maxSizep" style="float: right; height: 2.2rem">
+											<span>近五年总计 <b id="fiveCount"
+												style="font-size: 1.5rem; color: #34C0E1; font-weight: 200">-</b>项
+											</span>
+										</p>
+									</div>
+									<div class="box_nr" style="overflow: auto;">
+										<div id="yearLine" class="ak-echarts"
+											style="width: 100%; height: 96%;"></div>
+									</div>
+								</div>
+							</div>
+							<div size="65%" showCollapseButton="false">
+								<div class="F-box" id="area">
+									<div class="F-mcsas-title">
+										<span class="titlespan area-title">月度分布-</span><span
+											class="yearStyle"></span> <span class="unitspan">单位 : 项</span>
+									</div>
+									<div class="F-box_title F-box_title_maxl">
+										<p class="maxSizep" style="float: right; height: 2.2rem">
+											<span>本年消除 <b id="xcCount"
+												style="font-size: 1.5rem; color: #34C0E1; font-weight: 200">-</b>项
+											</span>
+										</p>
+										<br>
+										<p class="maxSizep" style="float: right;">
+											<span>本年未消 <b id="wxCount"
+												style="font-size: 1.5rem; color: #EA9E11; font-weight: 200">-</b>项
+											</span>
+										</p>
+									</div>
+									<div class="box_nr" style="overflow: auto;">
+										<div id="monthBar" class="ak-echarts"
+											style="width: 100%; height: 96%;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div size="50%" showCollapseButton="false">
+						<div class="ak-splitter" vertical="false" allowResize="false"
+							handlerSize="10" style="width: 100%; height: 100%;">
+							<div size="50%" showCollapseButton="false">
+								<div class="F-box">
+									<div class="F-mcsas-title">
+										<span class="titlespan">设备类型-</span><span class="yearStyle"></span>
+										<span class="unitspan">单位：项</span>
+									</div>
+									<div class="box_nr">
+										<div id="deviceTypePie" class="ak-echarts"
+											style="width: 100%; height: 96%;"></div>
+									</div>
+								</div>
+							</div>
+							<div size="50%" showCollapseButton="false">
+								<div class="F-box">
+									<div class="F-mcsas-title">
+										<span class="titlespan">隐患原因-</span><span
+											class="yearStyle"></span><span class="unitspan">单位：项</span>
+									</div>
+									<div class="box_nr ">
+										<div id="hazardCasePie" class="ak-echarts"
+											style="width: 100%; height: 96%;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

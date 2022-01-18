@@ -1,0 +1,176 @@
+@CHARSET "UTF-8";
+.ak-bgtransparent .ak-radiobuttonlist-item {
+  background: rgba(255,255,255,0.1);
+}
+
+.number-div {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 130px;
+  height: 70px;
+}
+
+.ak-buttongrid {
+    padding: 0px 10px;
+    height: 24px;
+    background: #009593;
+    display: block;
+    line-height: 24px;
+    color: #ffffff;
+    float: left;
+}
+.number-data{
+	color: #AB8EE0;
+	font-size: 3.3rem;
+}
+
+.number-per{
+	color: #AB8EE0;
+	font-size: 1.8rem;
+}
+
+.div-top{
+	width: 100%;
+	height: 45px;
+	text-align: center;
+}
+
+.div-bottom{
+	width: 100%;
+	height: 25px;
+    line-height: 40px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.ak-splitter{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+.ak-radiobuttonlistnewstyle .ak-radiobuttonlist-item-selected {
+  background: #34C0E2 !important;
+  opacity: 1 !important;
+}
+.ak-radiobuttonlistnewstyle .ak-radiobuttonlist-item {
+  background: #444B7B;
+}
+
+
+
+/******横向柱图*******/
+.loadTopDiv {
+  float: left;
+  height: 100%;
+  width: 95%;
+  margin-left: 2.5%;
+}
+#runningYear {
+	width: 95%;
+	height: 90%;
+	top: 1rem;
+	margin-left: 3.5%;
+}
+.barTdWidth {
+  font-size: 1rem;
+  text-align: center;
+  width: 20%;
+}
+.pDiv {
+  height: 1rem;
+  width: 100%;
+/*   background: #34C0E3; */
+/*   border-radius: 0px 10px 10px 0px; */
+  position: relative;
+/*   box-shadow: 0 0 10px rgba(0, 150, 148, 0.3); */
+  float: left;
+}
+#runningYear p {
+  line-height: 1rem;
+  text-align: center;
+  font-size: 12px;
+  height: 1rem;
+  width: 22%;
+  background: #EA9E0D;
+  border-radius: 0px 10px 10px 0px;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 150, 148, 0.3);
+}
+.year{
+	float: left;
+}
+
+
+
+/*********国产化率样式**************/
+#countryDevice{
+    z-index: 200;
+    position: absolute;
+    left: 17%;
+    bottom: 52px;
+    background-color: #F0F0F0;
+ 	width: 65%;
+    height: 16%;
+}
+#exportDevice{
+    z-index: 200;
+    position: absolute;
+    left: 17%;
+    bottom: 6px;
+    background-color: #F0F0F0;
+    width: 65%;
+    height: 14%;
+}
+#countryDevice{
+    z-index: 200;
+    position: absolute;
+    left: 17%;
+    bottom: 52px;
+    background-color: #F0F0F0;
+ 	width: 65%;
+    height: 16%;
+}
+#exportDevice{
+    z-index: 200;
+    position: absolute;
+    left: 17%;
+    bottom: 6px;
+    background-color: #F0F0F0;
+    width: 65%;
+    height: 14%;
+}
+.countryText{
+	color: #686666;
+    font-size: 1.1rem;
+    position: absolute;
+    left: 27%;
+    top: 27%;
+    text-align: center;
+}
+.exportText{
+	color:#686666;
+	font-size: 1.1rem;
+	position: absolute;
+	left: 27%;
+    top: 27%;
+}
+#countryNum {
+    cursor: pointer;
+    color: #009694;
+    font-size: 22px;
+    position: absolute;
+    left: 200px;
+    top: 12px;
+}
+#exportNum {
+    cursor: pointer;
+    color: #009694;
+    font-size: 22px;
+    position: absolute;
+    left: 200px;
+    top: 12px;
+}

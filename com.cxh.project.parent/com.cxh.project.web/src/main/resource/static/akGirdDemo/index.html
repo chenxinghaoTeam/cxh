@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta name='viweport' content="width=device-width,initial-scale=1.0">
+<title>隐患分析详细信息</title>
+<script>
+	$AK_DEBUGMODE = true;
+	$AK_LOCALE = "zh_CN";
+	__appRoot = "";
+	__akPath = __appRoot + "ak/scripts/";
+	__akThemePath = __appRoot + "ak/res/themes/";
+	/* tokenArrays = [];//本地放开，提交注释 */
+</script>
+<link rel='stylesheet' href="/ak/res/css/zero.css" />
+<link rel='stylesheet' href='/ak/res/themes/default/akui.min.css' />
+<link rel='stylesheet' href='/ak/res/themes/icons.min.css' />
+<link rel='stylesheet' href='/ak/res/themes/live/skin.min.css' />
+<script type="text/javascript"
+	src="/ak/scripts/lib/require/require.min.js"></script>
+<script type="text/javascript" src="res/js/config.js"></script>
+
+<link href="res/css/page.css" rel="stylesheet" type="text/css" />
+<link href="../common/css/common.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="content" class="ak-fit" style="background: #EBEEF5;">
+	<div class="ak-opendatagridsearch ak-opendatagridsearchtwolist">
+	<table>
+				<tbody>
+					<tr>
+					<!-- multiSelect="true" 多选-->
+						<td>
+							<span class="ak-opendatagridsearchname">换流站</span>
+							<input id="belongStation" class="ak-combobox ak-comboboxwhite" style="width:130px; margin-left:5px;" textField="text" valueField="id" emptyText="请选择..."
+    					  allowInput="false"  nullItemText="请选择..."/>   
+						</td>
+						<td>
+						<span class="ak-opendatagridsearchname">隐患等级</span>
+						<!-- 	<input id="testType" class="ak-combobox ak-comboboxwhite" style="width:140px; margin-left:5px;" textField="text" valueField="id" emptyText="请选择..."
+    						  allowInput="false"  nullItemText="请选择..."multiSelect="false"/>  -->  
+							<input id="hazardGradeType" class="ak-combobox ak-comboboxwhite" style="width:130px; margin-left:5px;" textField="text" valueField="id" emptyText="请选择..."
+    						  allowInput="false" value=""  nullItemText="请选择..."/>   
+						</td>
+						<td>
+							<span class="ak-opendatagridsearchname">隐患类型</span>
+							<input id="Cause" class="ak-combobox ak-comboboxwhite" style="width:130px; margin-left:5px;" textField="text" valueField="id" emptyText="请选择..."
+    					  allowInput="false"  nullItemText="请选择..."/>    
+						</td>					
+						<td>
+							<span class="ak-opendatagridsearchname">隐患状态</span>
+							<input id="hazardStateType" class="ak-combobox ak-comboboxwhite" style="width:130px; margin-left:5px;" textField="text" valueField="id" emptyText="请选择..."
+    					  allowInput="false"  nullItemText="请选择..."/>   
+						</td>
+						</tr>
+						<tr>
+						<td>
+							<span class="ak-opendatagridsearchname">发现时间</span>
+							<input id="str" class="ak-datepicker" style="width:130px; margin-left:5px;" textField="text" valueField="id" emptyText="请选择..."
+    						  allowInput="false"  nullItemText="请选择..."multiSelect="false"/>   
+						</td>
+						<td>
+							<span class="ak-opendatagridsearchname">至</span>
+							<input id="end" class="ak-datepicker" style="width:130px; margin-left:5px;" textField="text" valueField="id" emptyText="请选择..."
+    						  allowInput="false"  nullItemText="请选择..."multiSelect="false"/>   
+						</td>
+						<td></td>
+						<td><a id="queryBtn" class="ak-buttongrid ak-selectedstyle">查
+								询</a><a class="ak-buttongrid ak-selectedstyle"
+							style="margin-left: 10px;" id="exportBtn">导出</a>
+							<a class="ak-buttongrid ak-selectedstyle"
+							style="margin-left: 10px;" id="clear">重 置</a></td>
+					</tr>
+				</tbody>
+			</table>
+	</div>
+			<div class="ak-gridbox ak-gridboxtwolist">
+					<div id="datagrid" class="ak-datagrid" allowAlternating="true"showLoading="false" allowResizeColumn="false"
+						allowResize="false" pageSize="20"
+						style="width: 100%; height: 100%;">
+						<div property="columns">
+							<div type="indexcolumn" headerAlign="center" align="center">序号</div>
+							<div field="name" width="100" headerAlign="center" align="center">换流站</div>
+							<div field="discoveredDate" width="100" headerAlign="center" align="center" dateFormat="yyyy-MM-dd">发现日期</div>
+							<div field="hazardGradeName" width="100" headerAlign="center" align="center">隐患等级</div>
+							<div field="hazardTypeName" width="100" headerAlign="center" align="center">隐患类型</div>
+							<div field="hazardDescription" width="100" headerAlign="center" align="center">隐患描述</div>
+							<div field="removeDate" width="100" headerAlign="center" align="center" dateFormat="yyyy-MM-dd">消除时间</div>
+							<div field="hazardState" width="100" headerAlign="center" align="center">隐患状态</div>
+						</div>
+					</div>
+		</div>
+</div>
+</body>
+</html>

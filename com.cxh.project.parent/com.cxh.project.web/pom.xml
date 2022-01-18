@@ -13,11 +13,21 @@
 	<artifactId>com.cxh.project.web</artifactId>
 	<name>com.cxh.project.web</name>
 	<dependencies>
+		<dependency>
+			<groupId>com.nariit.pi6000</groupId>
+			<artifactId>ak</artifactId>
+			<version>${ak.version}</version>
+		</dependency>
 		<!-- 引入core 需要与core工程pom文件中groupId、artifactId、version一致 -->
 		<dependency>
 			<groupId>com.cxh.project</groupId>
 			<artifactId>com.cxh.project.core</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- 网络通讯 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.cxh.common</groupId>
@@ -81,6 +91,11 @@
 			<groupId>com.alibaba.cloud</groupId>
 			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
 			<version>2.2.1.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.gavaghan</groupId>
+			<artifactId>geodesy</artifactId>
+			<version>1.1.3</version>
 		</dependency>
 	</dependencies>
 </project>
