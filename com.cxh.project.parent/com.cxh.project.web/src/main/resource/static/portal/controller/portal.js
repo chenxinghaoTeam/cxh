@@ -6,7 +6,6 @@ define([ 'jquery' ], function($) {
 		navList();
 	}
 	
-	
 	$("#nav_dot li").click(function(e){
 		var text = $(this)[0].innerText;
 		var url = "";
@@ -25,7 +24,6 @@ define([ 'jquery' ], function($) {
 		}
 		$("#myiframe").attr("src",url)
 	})
-	
 
 	//导航菜单
 	function navList(id) {
