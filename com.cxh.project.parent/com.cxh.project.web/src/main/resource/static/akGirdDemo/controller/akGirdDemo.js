@@ -10,6 +10,8 @@ define([ 'akui','common' ],
 	function _init() {
 		//获取上级页面传过来的参数
 		_getUrlPath();
+		//获取表格数据
+		_initData();
 	};	
 	
 	
@@ -18,10 +20,10 @@ define([ 'akui','common' ],
 		var context = location.search;
      	var params = common.parseUrl(context);
 		if(params.age){
-    		alert(params.age)
+			
      	}
     	if(params.name){
-    		alert(params.name)
+    		
      	}
 		
 	};
@@ -29,9 +31,9 @@ define([ 'akui','common' ],
 	//初始化加载表格数据
 	function _initData(){
 		var param = {
-				stationLine:""
+				stationLine:"111"
 		};
-		common.refreshGird("",param,"datagrid");
+		common.refreshGird("/akController/initPage",param,"datagrid");
 	};
 	
 	
