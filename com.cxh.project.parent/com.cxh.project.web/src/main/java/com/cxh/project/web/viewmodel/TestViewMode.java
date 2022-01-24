@@ -14,13 +14,28 @@ public class TestViewMode {
 	 */
 	public List<Map<String, Object>> resultList;
 	
+	/** 下拉框 */
+	public Map<String, Object> filterData;
+	
 	
 	/**
 	 * 是否成功
 	 */
 	public Boolean successful;
-	
-	
+
+	/**
+	 * @return the filterData
+	 */
+	public Map<String, Object> getFilterData() {
+		return filterData;
+	}
+
+	/**
+	 * @param filterData the filterData to set
+	 */
+	public void setFilterData(Map<String, Object> filterData) {
+		this.filterData = filterData;
+	}
 
 	/**
 	 * @return the successful

@@ -28,5 +28,14 @@ public interface akClient {
 	 */
 	@RequestMapping("/getGridResultCount")
 	public Map<String, Object> getGridResultCount(@RequestBody QueryParam queryParam);
+	
+	/**
+	 * 下拉框
+	 * @param queryParam
+	 * @return
+	 */
+	@RequestMapping("/getSelectResult")
+	public List<Map<String, Object>> getSelectResult(@RequestBody QueryParam queryParam);
+
 
 }

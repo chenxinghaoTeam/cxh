@@ -2,6 +2,9 @@ define([ 'akui','common' ],
 		function( ak, common) {
 	var me = {};	
 	
+	var zg = "";
+	var zt = "";
+	var xl = "";
 	me.render = function() {
 		ak.parse();
 		_init();
@@ -10,6 +13,7 @@ define([ 'akui','common' ],
 	function _init() {
 		//获取上级页面传过来的参数
 		_getUrlPath();
+		_initCombox();
 		//获取表格数据
 		_initData();
 	};	
@@ -31,7 +35,9 @@ define([ 'akui','common' ],
 	//初始化加载表格数据
 	function _initData(){
 		var param = {
-				stationLine:"111"
+				"zg":zg,
+				"zt":zt,
+				"xl":xl
 		};
 		common.refreshGird("/akController/initPage",param,"datagrid");
 	};
@@ -45,6 +51,10 @@ define([ 'akui','common' ],
 				return;
 			}
 		}
+		zg = ak("zg").value;
+		zt = ak("zt").value;
+		xl = ak("xl").value;
+		_initData();
 	})
 	
 	
@@ -54,11 +64,19 @@ define([ 'akui','common' ],
 	function _initCombox(){
 		param = {	
 		};
-		var data = common.invokeAjax("",param);
+		var data = common.invokeAjax("/akController/initSelect",param);
 		if(data.successful){
-			ak("belongStation").setData(data.filterData.substationName);
+			ak("zg").setData(data.filterData.zg);
+			ak("zt").setData(data.filterData.zt);
+			ak("xl").setData(data.filterData.xl);
 		}
 	}
+	
+	
+	//初始化事件
+	$("#clear").click(function () {
+		common.clear() ;
+	})
 	
 	
 	

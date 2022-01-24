@@ -22,6 +22,7 @@
 		<poi-ooxml.version>3.17</poi-ooxml.version>
 		<!-- jxl导出 -->
 		<jxl.version>2.6.12</jxl.version>
+		<ak.version>1.0.67</ak.version>
 	</properties>
 
 	<!-- dependencyManagement版本管理,不引入jar包 dependencies实际引用的jar包 -->

@@ -12,7 +12,7 @@
 	__appRoot = "";
 	__akPath = __appRoot + "ak/scripts/";
 	__akThemePath = __appRoot + "ak/res/themes/";
-	/* tokenArrays = [];//本地放开，提交注释 */
+	tokenArrays = [];//本地放开，提交注释 
 </script>
 <link rel='stylesheet' href="/ak/res/css/zero.css" />
 <link rel='stylesheet' href='/ak/res/themes/default/akui.min.css' />
@@ -27,56 +27,51 @@
 </head>
 <body>
 <div id="content" class="ak-fit" style="background: #EBEEF5;">
-	<div class="ak-opendatagridsearch ak-opendatagridsearchtwolist">
-	<table>
+		<div class="ak-opendatagridsearch ak-opendatagridsearchtwolist">
+			<table>
 				<tbody>
 					<tr>
-					<!-- multiSelect="true" 多选-->
-						<td>
-							<span class="ak-opendatagridsearchname">换流站</span>
-							<input id="belongStation" class="ak-combobox ak-comboboxwhite" style="width:130px; margin-left:5px;" textField="text" valueField="id" emptyText="请选择..."
-    					  allowInput="false"  nullItemText="请选择..."/>   
-						</td>
-						<td>
-						<span class="ak-opendatagridsearchname">隐患等级</span>
-						<!-- 	<input id="testType" class="ak-combobox ak-comboboxwhite" style="width:140px; margin-left:5px;" textField="text" valueField="id" emptyText="请选择..."
-    						  allowInput="false"  nullItemText="请选择..."multiSelect="false"/>  -->  
-							<input id="hazardGradeType" class="ak-combobox ak-comboboxwhite" style="width:130px; margin-left:5px;" textField="text" valueField="id" emptyText="请选择..."
-    						  allowInput="false" value=""  nullItemText="请选择..."/>   
-						</td>
-						<td>
-							<span class="ak-opendatagridsearchname">隐患类型</span>
-							<input id="Cause" class="ak-combobox ak-comboboxwhite" style="width:130px; margin-left:5px;" textField="text" valueField="id" emptyText="请选择..."
-    					  allowInput="false"  nullItemText="请选择..."/>    
-						</td>					
-						<td>
-							<span class="ak-opendatagridsearchname">隐患状态</span>
-							<input id="hazardStateType" class="ak-combobox ak-comboboxwhite" style="width:130px; margin-left:5px;" textField="text" valueField="id" emptyText="请选择..."
-    					  allowInput="false"  nullItemText="请选择..."/>   
-						</td>
-						</tr>
-						<tr>
-						<td>
-							<span class="ak-opendatagridsearchname">发现时间</span>
-							<input id="str" class="ak-datepicker" style="width:130px; margin-left:5px;" textField="text" valueField="id" emptyText="请选择..."
-    						  allowInput="false"  nullItemText="请选择..."multiSelect="false"/>   
-						</td>
-						<td>
-							<span class="ak-opendatagridsearchname">至</span>
-							<input id="end" class="ak-datepicker" style="width:130px; margin-left:5px;" textField="text" valueField="id" emptyText="请选择..."
-    						  allowInput="false"  nullItemText="请选择..."multiSelect="false"/>   
-						</td>
-						<td></td>
-						<td><a id="queryBtn" class="ak-buttongrid ak-selectedstyle">查
+						<!-- multiSelect="true" 多选-->
+						<td><span class="ak-opendatagridsearchname">主管</span> <input
+							id="zg" class="ak-combobox ak-comboboxwhite"
+							style="width: 130px; margin-left: 5px;" textField="text"
+							valueField="id" emptyText="请选择..." allowInput="false"
+							nullItemText="请选择..." /></td>
+						<td><span class="ak-opendatagridsearchname">状态</span> <!-- 	<input id="testType" class="ak-combobox ak-comboboxwhite" style="width:140px; margin-left:5px;" textField="text" valueField="id" emptyText="请选择..."
+    						  allowInput="false"  nullItemText="请选择..."multiSelect="false"/>  -->
+							<input id="zt" class="ak-combobox ak-comboboxwhite"
+							style="width: 130px; margin-left: 5px;" textField="text"
+							valueField="id" emptyText="请选择..." allowInput="false" value=""
+							nullItemText="请选择..." /></td>
+						<td><span class="ak-opendatagridsearchname">学历</span> <input
+							id="xl" class="ak-combobox ak-comboboxwhite"
+							style="width: 130px; margin-left: 5px;" textField="text"
+							valueField="id" emptyText="请选择..." allowInput="false"
+							nullItemText="请选择..." /></td>
+							<td><a id="queryBtn" class="ak-buttongrid ak-selectedstyle">查
 								询</a><a class="ak-buttongrid ak-selectedstyle"
-							style="margin-left: 10px;" id="exportBtn">导出</a>
-							<a class="ak-buttongrid ak-selectedstyle"
-							style="margin-left: 10px;" id="clear">重 置</a></td>
+							style="margin-left: 10px;" id="exportBtn">导出</a> <a
+							class="ak-buttongrid ak-selectedstyle" style="margin-left: 10px;"
+							id="clear">重 置</a></td>
 					</tr>
+					<!-- <tr>
+						<td><span class="ak-opendatagridsearchname">发现时间</span> <input
+							id="str" class="ak-datepicker"
+							style="width: 130px; margin-left: 5px;" textField="text"
+							valueField="id" emptyText="请选择..." allowInput="false"
+							nullItemText="请选择..." multiSelect="false" /></td>
+						<td><span class="ak-opendatagridsearchname">至</span> <input
+							id="end" class="ak-datepicker"
+							style="width: 130px; margin-left: 5px;" textField="text"
+							valueField="id" emptyText="请选择..." allowInput="false"
+							nullItemText="请选择..." multiSelect="false" /></td>
+						<td></td>
+						
+					</tr> -->
 				</tbody>
 			</table>
-	</div>
-			<div class="ak-gridbox ak-gridboxtwolist">
+		</div>
+		<div class="ak-gridbox ak-gridboxtwolist">
 					<div id="datagrid" class="ak-datagrid" allowAlternating="true"showLoading="false" allowResizeColumn="false"
 						allowResize="false" pageSize="20"
 						style="width: 100%; height: 100%;">
